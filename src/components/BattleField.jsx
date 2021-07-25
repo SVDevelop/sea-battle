@@ -1,12 +1,13 @@
-import styles from './styles.module.css'
+import styles from "./styles.module.css";
 
+const BattleField = (props) => {
+	const { children, style = {} } = props;
 
-const BattleFild = ({children, style = {}}) => {
-    return (
-        <div className={styles.battlefild} style={style}>
-            {children}
-        </div>
-    );
+	return (
+		<div className={styles.battlefield} style={style}>
+			{children}
+		</div>
+	);
 };
 
-export default BattleFild
+export default BattleField;

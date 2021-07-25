@@ -1,24 +1,32 @@
-import {createContext, useMemo} from 'react'
-import PropTypes from 'prop-types'
- 
-export const SeaBattleContext = createContext()
+import { createContext, useMemo } from "react";
+import PropTypes from "prop-types";
+import Configure from './Configure'
+
+
+
+export const SeaBattleContext = createContext();
 
 const SeaBattle = (props) => {
-    const {cellSize, children} = props
-    const value = useMemo(()=> ({cellSize}), [cellSize])
-    
-    return (
-        <SeaBattleContext.Provider value={value}>
-            {children}
-        </SeaBattleContext.Provider>
-    );
+	const { cellSize, children } = props;
+    const {setup, setSetup} = Configure()
+
+    console.log(setup);
+
+	const value = useMemo(() => ({ cellSize: setup.cellSize }), [cellSize, setup]);
+
+	return (
+		<SeaBattleContext.Provider value={value}>
+			{children}
+		</SeaBattleContext.Provider>
+	);
 };
 
-export default SeaBattle
+export default SeaBattle;
 
-SeaBattle.protoTypes = {
-    cellSize: PropTypes.number.isRequired,
-}
-SeaBattle.defaultTypes = {
-    cellSize: 30
-}
+SeaBattle.propTypes = {
+	cellSize: PropTypes.number.isRequired,
+};
+
+SeaBattle.defaultProps = {
+	cellSize: 30,
+};
