@@ -58,7 +58,7 @@ export const editorSlice = createSlice({
 		},
 
 		rotate(state, action) {
-			const id = action.payload;
+			const {id, eShip} = action.payload;
 
 			const ship = state.ships.find((ship) => ship.id === id);
 
@@ -86,6 +86,8 @@ export const editorSlice = createSlice({
 						ship.direction === "row" ? "column" : "row";
 				}
 			}
+
+			// console.log(id, eShip.clientX, eShip.clientY)
 		},
 	},
 });

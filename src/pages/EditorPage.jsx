@@ -30,7 +30,7 @@ const EditorPage = () => {
 					ships={ships}
 					onPlace={(id, x, y) => dispatch(place({ id, x, y }))}
 					onDock={(id) => dispatch(dock(id))}
-					onRotate={(id) => dispatch(rotate(id))}
+					onRotate={(id) => dispatch(rotate({id}))}
 				/>
 			</div>
 			<div className={styles["editor-actions"]}>

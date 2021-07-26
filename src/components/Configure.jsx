@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const Configure = () => {
     const [setup, setSetup] = useState({
-        cellSize: 70,
+        cellSize: 30,
         rows: 10, 
         columns: 10,
         signed: true

@@ -15,11 +15,9 @@ ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter >
         <DndProvider backend={HTML5Backend} >
-          {/* <Configure> */}
             <SeaBattle> 
               <App />
             </SeaBattle>
-          {/* </Configure> */}
         </DndProvider>
       </BrowserRouter>
     </Provider>

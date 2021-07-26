@@ -7,12 +7,12 @@ import Configure from './Configure'
 export const SeaBattleContext = createContext();
 
 const SeaBattle = (props) => {
-	const { cellSize, children } = props;
+	const { children } = props;
     const {setup, setSetup} = Configure()
-
+	const { cellSize } = setup
     console.log(setup);
 
-	const value = useMemo(() => ({ cellSize: setup.cellSize }), [cellSize, setup]);
+	const value = useMemo(() => ({ cellSize }), [cellSize]);
 
 	return (
 		<SeaBattleContext.Provider value={value}>
